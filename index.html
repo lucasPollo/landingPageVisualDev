@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  
 
   <header class="site-header">
     <div class="wrap">
@@ -140,13 +141,21 @@
     <div class="container">
         <h2>Garanta agora seu desconto de <span>15%</span></h2>
         <p>Preencha e receba uma proposta personalizada em até 10 minutos.</p>
+    <form id="whatsForm" action="https://formsubmit.co/visualdev2025@gmail.com" method="POST">
+    <input type="text" name="nome" id="nome" placeholder="Seu nome" required>
+    <input type="tel" name="telefone" id="telefone" placeholder="Seu WhatsApp" required>
 
-        <form id="whatsForm">
-            <input type="text" id="nome" placeholder="Seu nome" required>
-            <input type="tel" id="telefone" placeholder="Seu WhatsApp" required>
+    <input type="hidden" name="_captcha" value="false">
 
-            <button class="btn" type="submit">Quero meu desconto</button>
-        </form>
+    <button class="btn" type="submit">Quero meu desconto</button>
+</form>
+<p id="successMessage" style="display:none; 
+    color:#00ff88;
+    margin-top:15px;
+    font-weight:600;
+    font-size:1.1rem;">
+    ✔ Mensagem enviada! Você receberá uma resposta em até 10 minutos.
+</p>
     </div>
 </section>
 
@@ -185,6 +194,8 @@
   </div>
 </footer>
 
+<script src="assets/js/index.js" defer></script>
+
   <div id="caseModal" class="modal">
     <div class="modal-content">
       <button class="modal-close" onclick="closeModal()">×</button>
@@ -192,54 +203,6 @@
     </div>
   </div>
 
-<script>
-  const cases = {
-    1: {
-      title: "Landing Page",
-      text: "<p>Landing otimizada com formulário, e botão direto para WhatsApp. Ideal para campanhas pagas. Inclui: design, HTML/CSS responsivo, integração básica. Prazo: 4 dias úteis.</p><ul><li>Preço sugerido: R$127.90</li><li>Entrega: 4 dias</li><li>Revisões: 2</li></ul>"
-    },
-    2: {
-      title: "Landing Page Intermediária",
-      text: "<p>Site com seções de serviços, galeria, CTA para agendamento pelo WhatsApp e otimização local (SEO local). Inclui: design + implementação básica.</p><ul><li>Preço sugerido: R$237.90</li><li>Entrega: 5 dias</li><li>Revisões: 2</li></ul>"
-    },
-    3: {
-      title: "Brand & Landing Page",
-      text: "<p>Pacote: logo + landing promocional para campanhas locais. Inclui banner promocional para redes sociais e integração com WhatsApp.</p><ul><li>Preço sugerido: R$297.90</li><li>Entrega: 7 dias</li><li>Revisões: 2</li></ul>"
-    }
-  };
-
-  function openCase(id) {
-    const modal = document.getElementById('caseModal');
-    document.getElementById('caseBody').innerHTML = `<h2>${cases[id].title}</h2>${cases[id].text}`;
-    modal.classList.add('open');
-  }
-  function closeModal() {
-    document.getElementById('caseModal').classList.remove('open');
-  }
-  // close on backdrop click
-  document.getElementById('caseModal').addEventListener('click', (e) => {
-    if (e.target.id === 'caseModal') closeModal();
-  });
-
-
-  document.getElementById('whatsForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    let nome = document.getElementById('nome').value;
-    let telefone = document.getElementById('telefone').value;
-
-   
-    let numero = "5546988174412";
-
-    let texto = `Olá! Quero garantir meu desconto de 15%.%0A` +
-                `Nome: ${nome}%0A` +
-                `WhatsApp: ${telefone}%0A`;
-
-    let url = `https://api.whatsapp.com/send?phone=${numero}&text=${texto}`;
-
-    window.open(url, '_blank');
-});
-</script>
 
 </body>
 </html>
