@@ -201,3 +201,56 @@ body{
   font-size: 1.4rem;
 }
 /*mudanca*/
+
+
+
+
+
+
+
+
+
+
+
+
+.beneficios {
+  margin: 80px auto;
+  text-align: center;
+}
+
+.beneficios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.beneficio-item {
+  background: #0c1a14;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #0aa56b33;
+  transition: 0.3s;
+}
+
+.beneficio-item:hover {
+  transform: translateY(-5px);
+  border-color: #0aa56b;
+}
+
+.beneficio-item i {
+  font-size: 32px;
+  color: #0aa56b;
+  margin-bottom: 10px;
+}
+
+.beneficio-item h4 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.beneficio-item p {
+  font-size: 0.95rem;
+  color: #c9c9c9;
+}
