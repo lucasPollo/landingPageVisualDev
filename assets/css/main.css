@@ -254,3 +254,23 @@ body{
   font-size: 0.95rem;
   color: #c9c9c9;
 }
+
+/* Centralizar card único na seção de soluções */
+#solucoes .grid-cards {
+  display: flex;
+  justify-content: center;
+}
+
+
+#solucoes .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#solucoes .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0,255,136,0.18);
+}
+
+#solucoes .section-title {
+  text-align: center;
+}
